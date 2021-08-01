@@ -1,0 +1,158 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Sprites/Icons/blank.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Sprites/Icons/weapon_equip.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Map.gd" type="Script" id=3]
+
+[sub_resource type="ButtonGroup" id=1]
+
+[node name="Map" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color( 0, 0, 0, 1 )
+margin_right = 328.0
+margin_bottom = 183.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Locations" type="TextureRect" parent="."]
+self_modulate = Color( 0.94902, 0.741176, 0.192157, 1 )
+margin_left = 79.0
+margin_top = 48.0
+margin_right = 239.0
+margin_bottom = 140.0
+texture = ExtResource( 1 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox" type="CheckBox" parent="Locations"]
+margin_left = 17.0
+margin_top = 62.0
+margin_right = 41.0
+margin_bottom = 86.0
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox2" type="CheckBox" parent="Locations"]
+margin_left = 38.0
+margin_top = 46.0
+margin_right = 62.0
+margin_bottom = 70.0
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox3" type="CheckBox" parent="Locations"]
+margin_left = 21.0
+margin_top = 26.0
+margin_right = 45.0
+margin_bottom = 50.0
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox4" type="CheckBox" parent="Locations"]
+margin_left = 59.0
+margin_top = 33.0
+margin_right = 83.0
+margin_bottom = 57.0
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox5" type="CheckBox" parent="Locations"]
+margin_left = 85.0
+margin_top = 44.0
+margin_right = 109.0
+margin_bottom = 68.0
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox6" type="CheckBox" parent="Locations"]
+margin_left = 80.0
+margin_top = 22.0
+margin_right = 104.0
+margin_bottom = 46.0
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox7" type="CheckBox" parent="Locations"]
+margin_left = 105.0
+margin_top = 23.0
+margin_right = 129.0
+margin_bottom = 47.0
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox8" type="CheckBox" parent="Locations"]
+margin_left = 134.0
+margin_top = 32.0
+margin_right = 158.0
+margin_bottom = 56.0
+group = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Back" type="TextureButton" parent="."]
+self_modulate = Color( 0.843137, 0.27451, 0.27451, 1 )
+margin_left = 80.0
+margin_top = 142.0
+margin_right = 100.0
+margin_bottom = 149.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Back"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "voltar"
+
+[node name="Go" type="TextureButton" parent="."]
+self_modulate = Color( 0.843137, 0.27451, 0.27451, 1 )
+margin_left = 219.0
+margin_top = 142.0
+margin_right = 239.0
+margin_bottom = 149.0
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Go"]
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 0.5, 0.5 )
+text = "Viajar"
+
+[connection signal="pressed" from="Back" to="." method="_on_Back_pressed"]
+[connection signal="pressed" from="Go" to="." method="_on_Go_pressed"]

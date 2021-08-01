@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/BtnSkill.gd" type="Script" id=1]
+[ext_resource path="res://PackageScenes/new_buttongroup.tres" type="ButtonGroup" id=2]
+[ext_resource path="res://Assets/Sprites/Icons/MOVE1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Sprites/Icons/MOVE2.png" type="Texture" id=4]
+
+[node name="BtnSkill" type="CheckBox"]
+anchor_right = 0.075
+anchor_bottom = 0.133
+margin_right = 16.0
+margin_bottom = 16.06
+custom_icons/radio_checked = ExtResource( 4 )
+custom_icons/radio_unchecked = ExtResource( 3 )
+group = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="." to="." method="_on_BtnSkill_pressed"]

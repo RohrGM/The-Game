@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/BattleMessage.gd" type="Script" id=1]
+
+[node name="BattleMessage" type="Label"]
+modulate = Color( 1, 0, 0, 1 )
+margin_left = -46.0
+margin_top = -4.0
+margin_right = 44.0
+margin_bottom = 12.0
+text = "q"
+align = 1
+valign = 1
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tween" type="Tween" parent="."]
