@@ -1,5 +1,6 @@
-extends Base
-class_name EnemyBase
+class_name EnemyBase extends Base
+
+onready var dead = preload("res://PackageScenes/SlugDead.tscn")
 
 enum mode{
 	BLOCKED,
@@ -53,6 +54,9 @@ func take_damage(value):
 		
 func dead():
 	battle.clear_deads()
+	var new = dead.instance()
+	get_parent().call_deferred("add_child", new)
+	new.position = position
 	queue_free()
 	
  #TURN FUNCTIONS###################################################################################
