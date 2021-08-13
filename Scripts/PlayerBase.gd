@@ -125,7 +125,7 @@ func pos_in_range(pos, distance):
 func clear_cells():
 	for i in cells_range:
 		map.set_cellv(i, -1)
-		
+	cell_hover = Vector2.ZERO
 	cells_range = []
 	
 func show_move_range():
@@ -135,7 +135,7 @@ func show_move_range():
 		for j in (attributes.action_points * 2 + 1):
 			if pos_in_range(pos + Vector2(i * 16, j * 16), attributes.action_points) > 0:
 				var cell = map.world_to_map(pos + Vector2(i * 16, j * 16))
-				if not cell in battle.get_busy_cells():
+				if not cell in battle.get_busy_cells() and nav_map.get_cellv(cell) != -1:
 					cells_range.append(cell)
 					map.set_cellv(cell, 0)
 					
@@ -167,6 +167,8 @@ func set_mode(md, agentF = null):
 	match current_mode:
 		mode.TURN:
 			clear_cells()
+			battle.clear_skills()
+			
 		mode.BLOCKED:
 			clear_cells()
 	
@@ -198,11 +200,11 @@ func hit():
 		current_target = null
 			
 func end_attack():
+	print("terminei ataquei agora")
 	if battle.active:
 		if attributes.action_points > 0 :
 			show_attack_range()
 		else:
-			print("proximo")
 			battle.next_turn()
 	
 		

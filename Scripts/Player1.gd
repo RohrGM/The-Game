@@ -9,4 +9,6 @@ func _ready():
 	life += int(attributes.const * 1.5)
 	
 	battle_icon = "res://Assets/Sprites/Icons/blank.png"
+	
+	print("position ",position)
 

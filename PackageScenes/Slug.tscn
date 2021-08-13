@@ -1,10 +1,11 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scripts/Enemy1.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Sprites/Enemys/slug.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Icons/blank.png" type="Texture" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 88.0511
+radius = 65.3463
 
 [sub_resource type="Animation" id=2]
 resource_name = "attack_left"
@@ -28,11 +29,14 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "attack_test"
+}, {
+"args": [  ],
+"method": "end_attack"
 } ]
 }
 
@@ -58,11 +62,14 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0.5, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [  ],
 "method": "attack_test"
+}, {
+"args": [  ],
+"method": "end_attack"
 } ]
 }
 
@@ -194,14 +201,19 @@ graph_offset = Vector2( 179, 86 )
 ]]
 script = ExtResource( 1 )
 
+[node name="Shadow" type="Sprite" parent="."]
+modulate = Color( 0, 0, 0, 0.392157 )
+position = Vector2( -0.220972, 1.67938 )
+scale = Vector2( 1.13995, 0.189773 )
+texture = ExtResource( 3 )
+
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
 hframes = 8
 vframes = 8
-frame = 8
+frame = 9
 
 [node name="View" type="Area2D" parent="."]
-visible = false
 input_pickable = false
 collision_layer = 0
 

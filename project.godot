@@ -14,10 +14,15 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://Scripts/Base.gd"
 }, {
+"base": "Area2D",
+"class": "Collectable",
+"language": "GDScript",
+"path": "res://Scripts/CollectableBase.gd"
+}, {
 "base": "Base",
 "class": "EnemyBase",
 "language": "GDScript",
-"path": "res://Scripts/Enemy.gd"
+"path": "res://Scripts/EnemyBaseF.gd"
 }, {
 "base": "Base",
 "class": "PlayerBase",
@@ -26,6 +31,7 @@ _global_script_classes=[ {
 } ]
 _global_script_class_icons={
 "Base": "",
+"Collectable": "",
 "EnemyBase": "",
 "PlayerBase": ""
 }

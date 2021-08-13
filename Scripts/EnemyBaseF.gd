@@ -35,6 +35,9 @@ func _on_MoveAt_in_position():
 		mode.TURN:
 			if attributes.action_points > 0 and attack_range(get_enemy().position):
 				attack()
+			else:
+				print("Passei no movimento")
+				battle.next_turn()
 				
 #func get_distance(pos):
 #	var nav = get_tree().get_root().get_node("World")
@@ -81,7 +84,7 @@ func move_in_battle(p):
 		for j in (attributes.action_points * 2 + 1):
 			if pos_in_range(pos + Vector2(i * 16, j * 16), attributes.action_points) > 0:
 				var cell = map.world_to_map(pos + Vector2(i * 16, j * 16))
-				if not cell in battle.get_busy_cells():
+				if not cell in battle.get_busy_cells() and nav_map.get_cellv(cell) != -1:
 					cells_range.append(cell)
 					
 	if cells_range.size() > 0:
@@ -128,6 +131,10 @@ func attack():
 		travel_anim("Attack")
 	else:
 		battle.next_turn()
+		
+func end_attack():
+	print("Passei no attaque")
+	battle.next_turn()
 		
 func attack_test():
 	if roll_dice(Vector2(1, 20)) > get_enemy().get_ca():

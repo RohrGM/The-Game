@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/CollectableArea.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/Icons/search_icon2.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/Icons/search_icon1.png" type="Texture" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.85554, 8.53763 )
+
+[node name="CollectableArea" type="Area2D" groups=[
+"LootArea",
+]]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 7.81581, 5.78331 )
+shape = SubResource( 1 )
+
+[node name="Icon" type="TextureProgress" parent="."]
+visible = false
+margin_left = 4.0
+margin_top = -27.0
+margin_right = 17.0
+margin_bottom = -15.0
+rect_pivot_offset = Vector2( 5.80629, 6.29424 )
+mouse_filter = 2
+texture_under = ExtResource( 3 )
+texture_progress = ExtResource( 2 )
+fill_mode = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="body_entered" from="." to="." method="_on_LootArea_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_LootArea_body_exited"]

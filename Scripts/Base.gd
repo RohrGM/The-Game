@@ -9,6 +9,7 @@ onready var map = get_tree().get_root().get_node("World/BattleMap")
 onready var battle = get_tree().get_root().get_node("World/GuiController/BattleManager")
 onready var bt_message = preload("res://PackageScenes/BattleMessage.tscn")
 onready var icon = preload("res://Assets/Sprites/Icons/blank.png")
+onready var nav_map = get_tree().get_root().get_node("World/NavMap")
 
 var attributes = {
 	"str": 5,
@@ -57,7 +58,7 @@ func update_anim_tree(vector : Vector2) -> void:
 	$AnimationTree.set("parameters/Idle/blend_position", vector.x)
 	$AnimationTree.set("parameters/Run/blend_position", vector.x)
 	$AnimationTree.set("parameters/BtIdle/blend_position", vector.x)
-	$AnimationTree.set("parameters/Punch/blend_position", vector.x)
+	$AnimationTree.set("parameters/Punch/blend_position", vector)
 	$AnimationTree.set("parameters/Hit/blend_position", vector.x)
 
 func center_block(pos):

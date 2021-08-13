@@ -1,0 +1,7 @@
+Godot Engine v3.3.2.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: NVIDIA GeForce GTX 1050 Ti/PCIe/SSE2
+OpenGL ES Batching: ON
+ 
+position (800, 211.529999)
+**ERROR**: Condition "r_error.error != Variant::CallError::CALL_OK" is true. Returned: __null
+   At: modules/gdscript/gdscript.cpp:121:_create_instance() - Condition "r_error.error != Variant::CallError::CALL_OK" is true. Returned: __null
